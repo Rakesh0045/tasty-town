@@ -38,11 +38,27 @@ export const fetchFoods = async () => {
 }
 
 
-export const createFood = async(food, foodImage) {
-  //  API call to create food without image
+export const createFood = async (token, food) => {
+  const response = await axios.post(BASE_URL, food, {
+    headers: {
+      Authorization: `Bearer ${token}`
+    }
+  });
 
-  //  API call to upload the image after successfull food creation
+  return response;
+}
 
-  // incase of any API failure, rollback the process
+export const uploadFoodImage = async (token, foodId, foodImage) => {
+  const formData = new FormData();
+  formData.append("foodImage", foodImage);
+
+  const response = await axios.post(`${BASE_URL}/image/${foodId}/food`, formData, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+      "Content-Type": "multipart/form-data"
+    }
+  });
+
+  return response;
 }
 

@@ -84,20 +84,20 @@ export default function Register() {
   }
 
   return (
-    <div class={`${styles['register-container']}`}>
-      <div class="row">
-        <div class="col-sm-9 col-md-7 col-lg-5 mx-auto">
-          <div class="card border-0 shadow rounded-3 my-5 fade-slide-in">
-            <div class="card-body p-4 p-sm-5">
-              <h5 class="card-title text-center mb-5 fw-light fs-5">
+    <div className={`${styles['register-container']}`}>
+      <div className="row">
+        <div className="col-sm-9 col-md-7 col-lg-5 mx-auto">
+          <div className="card border-0 shadow rounded-3 my-5 fade-slide-in">
+            <div className="card-body p-4 p-sm-5">
+              <h5 className="card-title text-center mb-5 fw-light fs-5">
                 Sign Up
               </h5>
 
               <form onSubmit={onSubmitHandler}>
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="text"
-                    class="form-control"
+                    className="form-control"
                     id="floatingName"
                     placeholder="John Doe"
                     name="name"
@@ -105,16 +105,16 @@ export default function Register() {
                     ref={nameRef}
                     onChange={() => clearFieldError("name")}
                   />
-                  <label for="floatingName">Full Name</label>
+                  <label htmlFor="floatingName">Full Name</label>
                   { errors.name && (
                     <p className="invalid-feedback d-block">{errors.name}</p>
                   )}
                 </div>
 
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="email"
-                    class="form-control"
+                    className="form-control"
                     id="floatingInput"
                     placeholder="name@example.com"
                     name="email"
@@ -122,16 +122,16 @@ export default function Register() {
                     ref={emailRef}
                     onChange={() => clearFieldError("email")}
                   />
-                  <label for="floatingInput">Email</label>
+                  <label htmlFor="floatingInput">Email</label>
                   { errors.email && (
                     <p className="invalid-feedback d-block">{errors.email}</p>
                   )}
                 </div>
 
-                <div class="form-floating mb-3">
+                <div className="form-floating mb-3">
                   <input
                     type="password"
-                    class="form-control"
+                    className="form-control"
                     id="floatingPassword"
                     placeholder="Password"
                     name="password"
@@ -139,22 +139,22 @@ export default function Register() {
                     ref={passwordRef}
                     onChange={() => clearFieldError("password")}
                   />
-                  <label for="floatingPassword">Password</label>
+                  <label htmlFor="floatingPassword">Password</label>
                   { errors.password && (
                     <p className="invalid-feedback d-block">{errors.password}</p>
                   )}
                 </div>
 
-                <div class="d-grid">
+                <div className="d-grid">
                   <button
-                    class="btn btn-outline-primary btn-login text-uppercase"
+                    className="btn btn-outline-primary btn-login text-uppercase"
                     type="submit"
                   >
                     Sign up
                   </button>
 
                   <button
-                    class="btn btn-outline-danger btn-login text-uppercase mt-2"
+                    className="btn btn-outline-danger btn-login text-uppercase mt-2"
                     type="reset"
                     onClick={onResetHandler}
                   >
@@ -162,7 +162,7 @@ export default function Register() {
                   </button>
                 </div>
 
-                <div class="mt-4">
+                <div className="mt-4">
                   Already have an account?
                   <Link to={"/login"}>Sign In</Link>
                 </div>

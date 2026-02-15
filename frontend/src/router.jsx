@@ -1,4 +1,4 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 import App from "./App";
 import ExploreFood from "./pages/explore foods/ExploreFood";
 import FoodDetails from "./pages/food details/FoodDetails";
@@ -14,6 +14,8 @@ import AdminLayout from "./layout/AdminLayout";
 import OrdersList from "./pages/admin/orders-list/OrdersList";
 import CategoryList from "./pages/admin/category-list/CategoryList";
 import FoodsList from "./pages/admin/foods-list/FoodsList";
+import AddFood from "./pages/admin/add-food/AddFood";
+import AddCategory from "./pages/admin/add-category/AddCategory";
 
 const router = createBrowserRouter([
   {
@@ -40,7 +42,10 @@ const router = createBrowserRouter([
     element: <AdminLayout />,
     errorElement: <ErrorPage />,
     children: [
+      { index: true, element: <Navigate to="orders" replace /> },
       { path: "orders", element: <OrdersList />},
+      { path: "add-food", element: <AddFood />},
+      { path: "add-category", element: <AddCategory />},
       { path: "categories", element: <CategoryList />},
       { path: "foods", element: <FoodsList />},
     ]

@@ -15,11 +15,10 @@ export default function AdminLayout() {
     }
 
     return (
-        <div className="d-flex" id="wrapper">
+        <div className="d-flex min-vh-100" id="wrapper">
             <Sidebar />
-            <div id="page-content-wrapper">
-                {/* Admin Navbar */}
-                <div className="container-fluid">
+            <div id="page-content-wrapper" className="flex-grow-1 bg-light-subtle">
+                <div className="container-fluid py-3 py-md-4">
                     <Outlet />
                 </div>
             </div>

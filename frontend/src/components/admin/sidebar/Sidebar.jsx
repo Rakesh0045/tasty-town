@@ -1,4 +1,7 @@
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
+const getNavLinkClass = ({ isActive }) =>
+    `list-group-item list-group-item-action p-3 ${isActive ? "active bg-dark border-dark" : "list-group-item-light"}`;
 
 export default function Sidebar() {
     return (
@@ -10,23 +13,23 @@ export default function Sidebar() {
             </div>
 
             <div className="list-group list-group-flush">
-                <NavLink to={"/admin/orders"} className="list-group-item list-group-item-action list-group-item-light p-3">
+                <NavLink to={"/admin/orders"} className={getNavLinkClass}>
                     <i className="bi bi-cart me-2"></i> Orders
                 </NavLink>
 
-                <NavLink to={"/admin/add-food"} className="list-group-item list-group-item-action list-group-item-light p-3">
+                <NavLink to={"/admin/add-food"} className={getNavLinkClass}>
                     <i className="bi bi-plus-circle me-2"></i> Add Food
                 </NavLink>
 
-                <NavLink to={"/admin/add-category"} className="list-group-item list-group-item-action list-group-item-light p-3">
+                <NavLink to={"/admin/add-category"} className={getNavLinkClass}>
                     <i className="bi bi-plus-circle me-2"></i> Add Category
                 </NavLink>
 
-                <NavLink to={"/admin/foods"} className="list-group-item list-group-item-action list-group-item-light p-3">
+                <NavLink to={"/admin/foods"} className={getNavLinkClass}>
                     <i className="bi bi-list-ul me-2"></i> List Food
                 </NavLink>
 
-                <NavLink to={"/admin/categories"} className="list-group-item list-group-item-action list-group-item-light p-3">
+                <NavLink to={"/admin/categories"} className={getNavLinkClass}>
                     <i className="bi bi-list-ul me-2"></i> List Category
                 </NavLink>
 

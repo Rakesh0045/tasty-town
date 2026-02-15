@@ -7,6 +7,20 @@ export const fetchCategories = async () => {
   return response.data;
 }
 
+export const createCategory = async (token, categoryName) => {
+  const response = await axios.post(
+    BASE_URL,
+    { categoryName },
+    {
+      headers: {
+        Authorization: `Bearer ${token}`
+      }
+    }
+  );
+
+  return response;
+}
+
 export const deleteCategoryById = async (token, categoryId) => {
   const response = await axios.delete(`${BASE_URL}/${categoryId}`, {
     headers: {
